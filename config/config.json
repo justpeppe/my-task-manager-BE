@@ -1,0 +1,28 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "301021",
+    "database": "my_task_manager",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+
+  "test": {
+    "username": "postgres",
+    "password": "301021",
+    "database": "my_task_manager",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  
+  "production": {
+    "username": "postgres",
+    "password": "301021",
+    "database": "my_task_manager",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
