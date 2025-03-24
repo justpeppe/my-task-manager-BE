@@ -2,13 +2,13 @@ const express = require('express');
 const cors = require('cors'); 
 const app = express();
 
-// Importo le rotte per le Task
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const taskRoutes = require('./routes/taskRoutes');
-// Importo le rotte per gli User
 const userRoutes = require('./routes/userRoutes');
 
 app.use (cors()); 
-// Configurazione di CORS
 app.use(cors(
     {
         origin: 'http://localhost:3001', // URL del client che può accedere alle API
@@ -16,9 +16,7 @@ app.use(cors(
     }
 ));
 
-// Rotte task
 app.use('/task', taskRoutes);
-// Rotte user
 app.use('/user', userRoutes);
 
 const PORT = 3000;
