@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 exports.register = async (req, res) => {
 try {
     // Estraggo email, password e userId da req.body
-    const { email, password, username } = req.body;
+    const { email, password } = req.body;
 
     // Controllo se email e password sono presenti
     if (!email || !password) {

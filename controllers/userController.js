@@ -1,9 +1,8 @@
-const User = require('../models/User'); // importo il model User
+const { User } = require('../models');
 
 // con CREATE creo un nuova User
 exports.createUser = async (req, res) => { 
     
-    console.log(req)
     try {    
         // definisco email, password, e  da req.body
         const { email, password } = req.body; 
@@ -23,7 +22,7 @@ exports.createUser = async (req, res) => {
     } catch (err) {
         // restituisco l'errore
         
-        res.status(500).json({ error: err }); 
+        res.status(500).json({ error: err.message }); 
     }
 };
 
@@ -31,14 +30,14 @@ exports.createUser = async (req, res) => {
 exports.getAllUsers = async (req, res) => {
     try {
         // trovo tutte gli User con await User.findAll() e le copio in Users
-        const Users = await User.findAll(); 
+        const users = await User.findAll(); 
 
         // restituisco tutte gli User
-        return res.json (Users); 
+        return res.json (users); 
 
     } catch (err) {
         // restituisco l'errore
-        res.status(500).json({ error: 'Errore nel recupero di tutte gli User' }); 
+        res.status(500).json({ error: err.message }); 
     }
 };
 
